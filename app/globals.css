@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================
+   BRAND — farver taget fra logoet
+   ================================================ */
+:root {
+  --black:  theme("colors.black");
+  --black2: theme("colors.black2");
+  --gray:   theme("colors.gray");
+  --gold:   theme("colors.gold");
+  --cream:  theme("colors.cream");
+  --muted:  theme("colors.muted");
+  --hairline: rgba(243, 238, 228, 0.08);
+  --gold-line: rgba(200, 164, 90, 0.22);
+  color-scheme: dark;
+}
+
+/* ================================================
+   BASE
+   ================================================ */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[id] { scroll-margin-top: 72px; }
+
+::selection { background: var(--gold); color: var(--black); }
+
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+
+button, a { touch-action: manipulation; }
+
+/* ================================================
+   KNAPPER & OVERSKRIFTER
+   ================================================ */
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center font-sans font-normal text-[12px] tracking-[.22em] uppercase bg-gold text-black px-9 py-4 no-underline transition-colors hover:bg-gold2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-sans font-normal text-[12px] tracking-[.22em] uppercase border border-gold/50 text-gold px-9 py-4 no-underline transition-colors hover:border-gold hover:bg-gold/10;
+  }
+  .h2 {
+    @apply font-serif font-normal text-[clamp(38px,4.6vw,64px)] leading-[1.04] tracking-[-.005em] text-cream;
+  }
+  .section {
+    @apply px-[52px] py-[120px] max-[900px]:px-5 max-[900px]:py-[80px];
+  }
+  .container-x {
+    @apply max-w-[1320px] mx-auto;
+  }
+}
+
+/* ================================================
+   EYEBROW — guldstreg foran små overskrifter
+   ================================================ */
+.eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 400; font-size: 11px; letter-spacing: .32em;
+  text-transform: uppercase; color: var(--gold);
+}
+.eyebrow::before {
+  content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+}
+.eyebrow-center { justify-content: center; }
+.eyebrow-center::after {
+  content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+}
+
+/* ================================================
+   HERO — tynde guldringe som i logoet
+   ================================================ */
+.hero-ring {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  border: 1px solid rgba(200, 164, 90, 0.10);
+  transform: translate(-50%, -50%);
+}
+
+/* Guldramme forskudt bag hero-billedet */
+.frame-offset::before {
+  content: ''; position: absolute; inset: 0;
+  border: 1px solid var(--gold-line);
+  transform: translate(18px, 18px);
+  pointer-events: none;
+}
+
+/* ================================================
+   BILLEDPLADSHOLDER
+   ================================================ */
+.placeholder-surface {
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(200, 164, 90, 0.07), transparent 60%),
+    linear-gradient(170deg, #202128 0%, #1A1B21 100%);
+}
+
+/* ================================================
+   KORT — guldstreg der tegnes ved hover
+   ================================================ */
+.gold-underline { position: relative; }
+.gold-underline::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left; transition: transform .45s ease;
+}
+.group:hover .gold-underline::after,
+.gold-underline:hover::after { transform: scaleX(1); }
+
+/* Formularkort med guldlinje i toppen */
+.form-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+}
+
+/* Felter */
+.field {
+  width: 100%;
+  background: transparent;
+  border: 0; border-bottom: 1px solid rgba(243, 238, 228, 0.16);
+  padding: 10px 0;
+  color: var(--cream);
+  font-size: 15px; font-weight: 300;
+  border-radius: 0;
+  transition: border-color .2s;
+}
+.field::placeholder { color: rgba(243, 238, 228, 0.3); }
+.field:focus { outline: none; border-bottom-color: var(--gold); }
+select.field { appearance: none; -webkit-appearance: none; cursor: pointer; }
+select.field option { background: var(--black2); color: var(--cream); }
+input[type="date"].field::-webkit-calendar-picker-indicator { filter: invert(.75) sepia(.5); cursor: pointer; }
+
+/* ================================================
+   SCROLL REVEAL
+   ================================================ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fadeIn { animation: fadeIn .4s ease-out both; }
+
+/* ================================================
+   REDUCED MOTION
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
