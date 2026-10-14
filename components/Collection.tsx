@@ -5,6 +5,7 @@ import SectionHeading from "./SectionHeading";
 import { useReveal } from "@/hooks/useReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { ImageSlot } from "@/lib/images";
+import { site } from "@/lib/site";
 import type { TranslationKey } from "@/lib/translations";
 
 const ITEMS: { slot: ImageSlot; title: TranslationKey; desc: TranslationKey }[] = [
@@ -28,7 +29,7 @@ export default function Collection() {
               <ModelImage
                 slot={item.slot}
                 sizes="(max-width: 760px) 100vw, 33vw"
-                alt={`${t(item.title)} — Atelier Copenhagen`}
+                alt={`${t(item.title)} — ${site.name}`}
               />
               <h3 className="font-serif text-[30px] leading-none mt-7 text-cream transition-colors group-hover:text-gold">
                 {t(item.title)}

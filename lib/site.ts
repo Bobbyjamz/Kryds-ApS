@@ -5,9 +5,9 @@ import type { Lang } from "./translations";
  * Tomme felter ("") bliver automatisk skjult på siden.
  */
 export const site = {
-  name: "Atelier Copenhagen",
+  name: "Atelier",
   /** Juridisk navn der står i footer og privatlivspolitik */
-  legalName: "Atelier Copenhagen",
+  legalName: "Atelier",
   cvr: "",
 
   // TODO: Midlertidigt KrydsByg's kontaktinfo — skift til Atelier's egen

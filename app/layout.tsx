@@ -22,25 +22,25 @@ const sans = Jost({
   display: "swap",
 });
 
-const title = `Jakkesæt i København fra ${formatPrice(startPrice, "da")} | Atelier Copenhagen`;
+const title = `Jakkesæt i København fra ${formatPrice(startPrice, "da")} | ${site.name}`;
 const description = `Jakkesæt i ægte uld fra vores lager, tilpasset af skrædder i København. Næsten skræddersyet, fra ${formatPrice(startPrice, "da")}. Business, bryllup og smoking.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
-  title: { default: title, template: "%s | Atelier Copenhagen" },
+  title: { default: title, template: `%s | ${site.name}` },
   description,
   alternates: { canonical: "/" },
   keywords: [
     "jakkesæt København", "tilpasset jakkesæt", "billigt jakkesæt", "jakkesæt tilpasning",
-    "bryllupsjakkesæt", "smoking", "skrædder København", "jakkesæt fra lager", "Atelier Copenhagen",
+    "bryllupsjakkesæt", "smoking", "skrædder København", "jakkesæt fra lager", "Atelier jakkesæt",
   ],
-  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/atelier-logo.jpg" },
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/apple-icon.png" },
   openGraph: {
     title,
     description,
     url: "/",
     siteName: site.name,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Atelier Copenhagen" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: site.name }],
     type: "website",
     locale: "da_DK",
   },

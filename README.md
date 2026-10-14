@@ -1,8 +1,8 @@
-# Atelier Copenhagen
+# Atelier
 
-Hjemmeside for **Atelier Copenhagen** — *Skrædderoplevelsen, for små penge.*
+Hjemmeside for **Atelier** — *Sæt et X i kalenderen for dit nye jakkesæt.*
 
-Jakkesæt fra lager, tilpasset af skrædder, så de sidder næsten som skræddersyet. Fra 1.699 kr.
+Jakkesæt i ægte uld fra lager, tilpasset af skrædder, så de sidder næsten som skræddersyet. Klar på en uge. Fra 1.699 kr.
 
 Bygget på samme fundament som krydsbyg.com: **Next.js 15** (App Router) + TypeScript + Tailwind CSS,
 sort/hvid-tema, dansk/engelsk sprogskift og booking-formular der sender mail via **Resend**.
@@ -60,7 +60,7 @@ Formularen sender en mail via [Resend](https://resend.com). Sæt disse miljøvar
 
 ```
 RESEND_API_KEY=re_...
-RESEND_FROM=Atelier Copenhagen <kontakt@ditdomæne.dk>
+RESEND_FROM=Atelier <kontakt@ditdomæne.dk>
 RESEND_TO=kontakt@ditdomæne.dk
 NEXT_PUBLIC_SITE_URL=https://ditdomæne.dk
 ```
@@ -84,14 +84,15 @@ lib/
 └── translations.ts         # Alle tekster
 public/
 ├── billeder/               # ← Læg modelbillederne her
-├── atelier-logo.jpg        # Originalt logo
+├── apple-icon.png          # Ikon til mobilens hjemmeskærm
 ├── og-image.jpg            # Delingsbillede (Facebook, LinkedIn osv.)
 └── favicon.svg
 ```
 
 ## Brand
 
-- Baggrund `#17181D` og guld `#C8A45A` — taget direkte fra logoet
+- Logo: et kryds (én guldstreg og én i tekstfarven) + ATELIER — se `components/LogoMark.tsx` og `components/Logo.tsx`
+- Sort tema: baggrund `#17181D` og guld `#C8A45A`
 - Hvidt tema: lys baggrund `#FAF8F4` og mørkere guld `#8A6A2B`, så teksten kan læses
 - Siden starter i hvidt tema; knappen i menuen skifter til sort, og valget huskes. Farverne ligger som variabler i `app/globals.css`
 - Cormorant Garamond (overskrifter) + Jost (brødtekst)

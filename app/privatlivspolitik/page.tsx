@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privatlivspolitik",
-  description: "Sådan behandler Atelier Copenhagen dine personoplysninger.",
+  description: `Sådan behandler ${site.name} dine personoplysninger.`,
   alternates: { canonical: "/privatlivspolitik" },
 };
 
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
       <Nav />
       <main className="px-[52px] pt-[160px] pb-[120px] max-[900px]:px-5 max-[900px]:pt-[130px]">
         <article className="max-w-[760px] mx-auto">
-          <div className="eyebrow">Atelier Copenhagen</div>
+          <div className="eyebrow">{site.name}</div>
           <h1 className="h2 mt-6">
             Privatlivs<em className="italic text-gold">politik</em>
           </h1>

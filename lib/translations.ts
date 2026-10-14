@@ -18,8 +18,8 @@ const da = {
 
   // Hero
   hero_eyebrow: "Jakkesæt · Tilpasning · København",
-  hero_h1_1: "Skrædder­oplevelsen",
-  hero_h1_2: "for små penge",
+  hero_h1_1: "Sæt et X i kalenderen",
+  hero_h1_2: "for dit nye jakkesæt",
   hero_desc:
     "Vælg dit jakkesæt i ægte uld fra vores store lager, og få det tilpasset af vores skrædder. Resultatet sidder næsten som skræddersyet, men uden skrædderprisen.",
   hero_price_label: "Jakkesæt fra",
@@ -27,13 +27,13 @@ const da = {
   hero_btn_collection: "Se kollektionen",
   hero_point_1: "Ægte uld, ikke polyester",
   hero_point_2: "Tilpasset af skrædder",
-  hero_point_3: "Næsten skræddersyet",
+  hero_point_3: "Klar på en uge",
 
   // Ticker
   ticker_1: "Ægte uld, ikke polyester",
   ticker_2: "Næsten skræddersyet",
   ticker_3: "Tilpasset af skrædder",
-  ticker_4: "Business",
+  ticker_4: "Klar på en uge",
   ticker_5: "Bryllup",
   ticker_6: "Black tie",
   ticker_7: "Jakkesæt fra {price}",
@@ -64,7 +64,7 @@ const da = {
   proc_3_title: "Tilpasning hos skrædderen",
   proc_3_desc: "Vores skrædder tager mål og tilpasser jakke og bukser, så pasformen bliver rigtig.",
   proc_4_title: "Hent dit jakkesæt",
-  proc_4_desc: "Du henter dit tilpassede jakkesæt, klar til den store dag.",
+  proc_4_desc: "En uge efter henter du dit tilpassede jakkesæt, klar til den store dag.",
 
   // Lookbook
   look_eyebrow: "Lookbook",
@@ -84,8 +84,8 @@ const da = {
   why_3_desc: "Skrædderoplevelsen behøver ikke koste en formue. Vi holder prisen nede, ikke kvaliteten.",
   why_4_title: "Stort udvalg på lager",
   why_4_desc: "Mange snit, farver og størrelser at vælge imellem, til både hverdag og fest.",
-  why_5_title: "Hurtigt klar",
-  why_5_desc: "Jakkesættet ligger klar på lageret, så du venter kun på tilpasningen. Ikke på at det bliver syet fra bunden.",
+  why_5_title: "Klar på en uge",
+  why_5_desc: "Jakkesættet ligger klar på lageret, så du venter kun på tilpasningen. Efter en uge kan du hente det.",
   why_6_title: "Se det, før du køber",
   why_6_desc: "Du prøver det rigtige jakkesæt på i stedet for at vælge ud fra en stofprøve.",
 
@@ -100,7 +100,7 @@ const da = {
   price_f1: "Jakkesæt i uld fra vores lager",
   price_f2: "Personlig rådgivning og prøvning",
   price_f3: "Tilpasning hos vores skrædder",
-  price_f4: "Klar til afhentning",
+  price_f4: "Klar til afhentning på en uge",
   price_cta: "Book tid",
   price_note: "Prisen på tilpasning afhænger af, hvad der skal justeres. Den får du af skrædderen, før vi går i gang.",
 
@@ -123,7 +123,7 @@ const da = {
   faq_3_q: "Hvad er forskellen på tilpasset og skræddersyet?",
   faq_3_a: "Et skræddersyet jakkesæt bliver syet fra bunden og tager typisk flere uger. Vi starter med et færdigt jakkesæt i den størrelse, der passer dig bedst, og så justerer skrædderen det til dine mål. Det sidder næsten som skræddersyet, men koster langt mindre, og du slipper for den lange ventetid.",
   faq_4_q: "Hvor lang tid tager det?",
-  faq_4_a: "Jakkesættet ligger allerede på lager, så du venter kun på tilpasningen. Hvor lang tid den tager, afhænger af, hvad der skal justeres. Skrædderen giver dig en dato, når du er til prøvning.",
+  faq_4_a: "Dit jakkesæt er klar en uge efter prøvningen. Det ligger allerede på lager, så du venter kun på, at skrædderen tilpasser det.",
   faq_5_q: "Skal jeg booke tid?",
   faq_5_a: "Vi anbefaler, at du booker en tid, så vi har god tid til dig. Det er gratis og uforpligtende at komme og prøve jakkesæt.",
   faq_6_q: "Kan vi komme flere, fx til et bryllup?",
@@ -134,7 +134,7 @@ const da = {
   about_h2: "Skrædderens pasform.",
   about_h2_accent: "Hyldens pris.",
   about_p1:
-    "Atelier Copenhagen er skabt ud fra en enkel idé: Alle fortjener et jakkesæt, der sidder godt, uden at det skal koste en formue.",
+    "Atelier er skabt ud fra en enkel idé: Alle fortjener et jakkesæt, der sidder godt, uden at det skal koste en formue.",
   about_p2:
     "Derfor starter vi med jakkesæt i ægte uld fra vores eget lager og lader vores skrædder tilpasse dem til dig. Du får skrædderoplevelsen og en pasform, der næsten er skræddersyet, til en pris de fleste kan være med på.",
   about_cta: "Book en tid",
@@ -174,7 +174,7 @@ const da = {
   form_error_privacy: "Du skal acceptere privatlivspolitikken.",
 
   // Footer
-  footer_tagline: "Skrædderoplevelsen — for små penge",
+  footer_tagline: "Sæt et X i kalenderen for dit nye jakkesæt",
   footer_nav: "Atelier",
   footer_contact: "Kontakt",
   footer_follow: "Følg os",
@@ -203,8 +203,8 @@ const en: Record<TranslationKey, string> = {
   theme_to_dark: "Switch to dark theme",
 
   hero_eyebrow: "Suits · Alterations · Copenhagen",
-  hero_h1_1: "The tailoring experience",
-  hero_h1_2: "for less",
+  hero_h1_1: "Put an X in the calendar",
+  hero_h1_2: "for your new suit",
   hero_desc:
     "Choose a real wool suit from our large stock and have it fitted by our tailor. It fits almost like bespoke, without the bespoke price.",
   hero_price_label: "Suits from",
@@ -212,12 +212,12 @@ const en: Record<TranslationKey, string> = {
   hero_btn_collection: "View the collection",
   hero_point_1: "Real wool, not polyester",
   hero_point_2: "Fitted by a tailor",
-  hero_point_3: "Almost bespoke",
+  hero_point_3: "Ready in a week",
 
   ticker_1: "Real wool, not polyester",
   ticker_2: "Almost bespoke",
   ticker_3: "Fitted by a tailor",
-  ticker_4: "Business",
+  ticker_4: "Ready in a week",
   ticker_5: "Wedding",
   ticker_6: "Black tie",
   ticker_7: "Suits from {price}",
@@ -245,7 +245,7 @@ const en: Record<TranslationKey, string> = {
   proc_3_title: "Fitting with the tailor",
   proc_3_desc: "Our tailor takes your measurements and adjusts the jacket and trousers for the right fit.",
   proc_4_title: "Pick up your suit",
-  proc_4_desc: "You pick up your fitted suit, ready for the big day.",
+  proc_4_desc: "A week later you pick up your fitted suit, ready for the big day.",
 
   look_eyebrow: "Lookbook",
   look_h2: "Style in every",
@@ -263,8 +263,8 @@ const en: Record<TranslationKey, string> = {
   why_3_desc: "The tailoring experience shouldn't cost a fortune. We keep the price down, not the quality.",
   why_4_title: "Large selection in stock",
   why_4_desc: "Plenty of cuts, colours and sizes to choose from, for every day and celebrations.",
-  why_5_title: "Ready fast",
-  why_5_desc: "The suit is already in stock, so you only wait for the alterations. Not for it to be made from scratch.",
+  why_5_title: "Ready in a week",
+  why_5_desc: "The suit is already in stock, so you only wait for the alterations. After a week you can pick it up.",
   why_6_title: "See it before you buy",
   why_6_desc: "You try on the actual suit instead of choosing from a fabric swatch.",
 
@@ -278,7 +278,7 @@ const en: Record<TranslationKey, string> = {
   price_f1: "A wool suit from our stock",
   price_f2: "Personal advice and try-on",
   price_f3: "Fitting with our tailor",
-  price_f4: "Ready for pick-up",
+  price_f4: "Ready for pick-up in a week",
   price_cta: "Book now",
   price_note: "The price of alterations depends on what needs adjusting. The tailor gives it to you before any work begins.",
 
@@ -299,7 +299,7 @@ const en: Record<TranslationKey, string> = {
   faq_3_q: "What is the difference between fitted and bespoke?",
   faq_3_a: "A bespoke suit is made from scratch and usually takes several weeks. We start from a finished suit in the size that fits you best, and the tailor adjusts it to your measurements. It fits almost like bespoke, but costs far less, and you skip the long wait.",
   faq_4_q: "How long does it take?",
-  faq_4_a: "The suit is already in stock, so you only wait for the alterations. How long they take depends on what needs adjusting. The tailor gives you a date at your fitting.",
+  faq_4_a: "Your suit is ready a week after your fitting. It is already in stock, so you only wait for the tailor to fit it.",
   faq_5_q: "Do I need to book an appointment?",
   faq_5_a: "We recommend booking a time so we can give you our full attention. Coming in to try on suits is free and without obligation.",
   faq_6_q: "Can we come as a group, e.g. for a wedding?",
@@ -309,7 +309,7 @@ const en: Record<TranslationKey, string> = {
   about_h2: "Tailored fit.",
   about_h2_accent: "Off-the-rack price.",
   about_p1:
-    "Atelier Copenhagen was founded on a simple idea: everyone deserves a suit that fits well, without it costing a fortune.",
+    "Atelier was founded on a simple idea: everyone deserves a suit that fits well, without it costing a fortune.",
   about_p2:
     "That's why we start with real wool suits from our own stock and let our tailor fit them to you. You get the tailoring experience and an almost bespoke fit, at a price most people can afford.",
   about_cta: "Book a time",
@@ -347,7 +347,7 @@ const en: Record<TranslationKey, string> = {
   form_error: "Something went wrong. Please try again, or contact us directly.",
   form_error_privacy: "You must accept the privacy policy.",
 
-  footer_tagline: "The tailoring experience — for less",
+  footer_tagline: "Put an X in the calendar for your new suit",
   footer_nav: "Atelier",
   footer_contact: "Contact",
   footer_follow: "Follow us",

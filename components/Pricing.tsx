@@ -1,6 +1,6 @@
 "use client";
 
-import Monogram from "./Monogram";
+import LogoMark from "./LogoMark";
 import SectionHeading from "./SectionHeading";
 import { useReveal } from "@/hooks/useReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,7 +22,7 @@ export default function Pricing() {
           <span className="absolute top-0 left-0 right-0 h-px bg-gold" aria-hidden="true" />
 
           <div className="flex flex-col items-center justify-center text-center px-10 py-14 border-r border-[var(--hairline)] max-[760px]:border-r-0 max-[760px]:border-b max-[760px]:py-12">
-            <Monogram size={52} className="opacity-80" />
+            <LogoMark size={44} />
             <span className="mt-7 border border-gold/50 px-4 py-[7px] font-sans text-[10px] tracking-[.26em] uppercase text-gold">
               {t("price_badge")}
             </span>

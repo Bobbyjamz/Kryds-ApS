@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Monogram from "./Monogram";
+import LogoMark from "./LogoMark";
 import { useImages } from "@/contexts/ImagesContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { IMAGE_SLOTS, type ImageSlot } from "@/lib/images";
@@ -39,7 +39,7 @@ export default function ModelImage({ slot, alt, sizes, priority, className = "" 
       ) : (
         <div className="placeholder-surface absolute inset-0 flex flex-col items-center justify-center text-center" role="img" aria-label={alt}>
           <div className="absolute inset-3 border border-gold/10 pointer-events-none" />
-          <Monogram size={64} className="opacity-40 transition-opacity duration-500 group-hover:opacity-70" />
+          <LogoMark size={56} className="opacity-30 transition-opacity duration-500 group-hover:opacity-60" />
           <span className="mt-5 font-sans text-[10px] tracking-[.35em] uppercase text-gold/60">{t("img_coming")}</span>
           {site.showImageHints && (
             <span className="absolute bottom-6 left-0 right-0 px-4 font-sans text-[10px] tracking-[.08em] text-muted/60">

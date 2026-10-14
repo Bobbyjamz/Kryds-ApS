@@ -2,7 +2,7 @@
 
 import ModelImage from "./ModelImage";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { startPrice, formatAmount } from "@/lib/site";
+import { site, startPrice, formatAmount } from "@/lib/site";
 
 export default function Hero() {
   const { t, lang } = useLanguage();
@@ -25,7 +25,9 @@ export default function Hero() {
             className="font-serif font-normal text-[clamp(44px,5.6vw,92px)] leading-[1] tracking-[-.01em] mt-8 opacity-0 animate-fadeup"
             style={{ animationDelay: ".3s" }}
           >
-            {t("hero_h1_1")}
+            {t("hero_h1_1")
+              .split("X")
+              .flatMap((part, i) => (i === 0 ? [part] : [<span key={i} className="text-gold">X</span>, part]))}
             <br />
             <em className="italic text-gold">{t("hero_h1_2")}</em>
           </h1>
@@ -67,7 +69,7 @@ export default function Hero() {
             slot="hero"
             priority
             sizes="(max-width: 900px) 92vw, 540px"
-            alt="Model i jakkesæt fra Atelier Copenhagen"
+            alt={`Model i jakkesæt fra ${site.name}`}
           />
         </div>
       </div>

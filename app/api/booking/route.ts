@@ -73,8 +73,7 @@ export async function POST(req: NextRequest) {
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="background:#17181D;max-width:600px;width:100%;">
         <tr><td style="padding:28px 32px;border-bottom:1px solid #C8A45A;text-align:center;">
-          <p style="margin:0;font-size:24px;letter-spacing:0.3em;color:#C8A45A;">ATELIER</p>
-          <p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.4em;color:#C8A45A;">COPENHAGEN</p>
+          <p style="margin:0;font-size:24px;letter-spacing:0.3em;color:#F3EEE4;"><span style="color:#C8A45A;">✕</span> ATELIER</p>
         </td></tr>
         <tr><td style="padding:28px 32px 8px;">
           <p style="margin:0;font-size:22px;color:#F3EEE4;">Ny booking-forespørgsel</p>
