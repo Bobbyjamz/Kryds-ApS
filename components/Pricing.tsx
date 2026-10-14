@@ -23,7 +23,10 @@ export default function Pricing() {
 
           <div className="flex flex-col items-center justify-center text-center px-10 py-14 border-r border-[var(--hairline)] max-[760px]:border-r-0 max-[760px]:border-b max-[760px]:py-12">
             <Monogram size={52} className="opacity-80" />
-            <p className="font-sans text-[11px] tracking-[.3em] uppercase text-muted mt-8">{t("price_from")}</p>
+            <span className="mt-7 border border-gold/50 px-4 py-[7px] font-sans text-[10px] tracking-[.26em] uppercase text-gold">
+              {t("price_badge")}
+            </span>
+            <p className="font-sans text-[11px] tracking-[.3em] uppercase text-muted mt-7">{t("price_from")}</p>
             <p className="font-serif text-gold leading-none mt-3 lining-nums">
               <span className="text-[clamp(64px,8vw,88px)]">{formatAmount(startPrice, lang)}</span>
               <span className="text-[28px] ml-2">{t("price_currency")}</span>
