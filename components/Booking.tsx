@@ -10,7 +10,7 @@ import type { TranslationKey } from "@/lib/translations";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-const OCCASIONS: TranslationKey[] = ["occ_business", "occ_wedding", "occ_tux", "occ_other"];
+const OCCASIONS: TranslationKey[] = ["occ_business", "occ_wedding", "occ_tux", "occ_galla", "occ_group", "occ_other"];
 
 function Label({ htmlFor, children, required }: { htmlFor: string; children: React.ReactNode; required?: boolean }) {
   return (
@@ -63,7 +63,7 @@ export default function Booking() {
   const hasInfo = site.phone || site.email || site.address || site.openingHours.length > 0;
 
   return (
-    <section id="book" className="section" ref={ref}>
+    <section id="book" className="section bg-black2 border-t border-[var(--hairline)]" ref={ref}>
       <div className="container-x grid grid-cols-[.9fr_1.1fr] gap-24 items-start max-[1000px]:grid-cols-1 max-[1000px]:gap-14">
         <div>
           <SectionHeading eyebrow={t("book_eyebrow")} title={t("book_h2")} accent={t("book_h2_accent")} intro={t("book_intro")} />
@@ -113,7 +113,7 @@ export default function Booking() {
           )}
         </div>
 
-        <div className="reveal form-card relative bg-black2 border border-[var(--hairline)] p-12 max-[640px]:p-7">
+        <div className="reveal form-card relative bg-black border border-[var(--hairline)] p-12 max-[640px]:p-7">
           {state === "success" ? (
             <div className="py-16 text-center flex flex-col items-center" role="status">
               <span className="w-14 h-14 rounded-full border border-gold flex items-center justify-center text-gold text-[22px]" aria-hidden="true">

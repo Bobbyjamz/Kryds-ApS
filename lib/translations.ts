@@ -8,6 +8,7 @@ const da = {
   nav_lookbook: "Lookbook",
   nav_prices: "Pris",
   nav_about: "Om os",
+  nav_faq: "Spørgsmål & svar",
   nav_book: "Book tid",
   nav_menu_open: "Åbn menu",
   nav_menu_close: "Luk menu",
@@ -57,7 +58,7 @@ const da = {
   proc_h2: "Fra lager til",
   proc_h2_accent: "perfekt pasform",
   proc_1_title: "Book en tid",
-  proc_1_desc: "Vælg et tidspunkt, der passer dig, og kom forbi i ro og mag.",
+  proc_1_desc: "Vælg et tidspunkt, der passer dig. Det er gratis og uforpligtende.",
   proc_2_title: "Find dit jakkesæt",
   proc_2_desc: "Prøv jakkesæt fra vores lager, og find snit, farve og størrelse, der passer dig.",
   proc_3_title: "Tilpasning hos skrædderen",
@@ -83,10 +84,10 @@ const da = {
   why_3_desc: "Skrædderoplevelsen behøver ikke koste en formue. Vi holder prisen nede, ikke kvaliteten.",
   why_4_title: "Stort udvalg på lager",
   why_4_desc: "Mange snit, farver og størrelser at vælge imellem, til både hverdag og fest.",
-  why_5_title: "Se det, før du køber",
-  why_5_desc: "Du prøver det rigtige jakkesæt på i stedet for at vælge ud fra en stofprøve.",
-  why_6_title: "Personlig rådgivning",
-  why_6_desc: "Vi hjælper dig med at finde det jakkesæt, der passer til både dig og anledningen.",
+  why_5_title: "Hurtigt klar",
+  why_5_desc: "Jakkesættet ligger klar på lageret, så du venter kun på tilpasningen. Ikke på at det bliver syet fra bunden.",
+  why_6_title: "Se det, før du køber",
+  why_6_desc: "Du prøver det rigtige jakkesæt på i stedet for at vælge ud fra en stofprøve.",
 
   // Pris
   price_eyebrow: "Pris",
@@ -101,7 +102,32 @@ const da = {
   price_f3: "Tilpasning hos vores skrædder",
   price_f4: "Klar til afhentning",
   price_cta: "Book tid",
-  price_note: "Prisen på tilpasning afhænger af, hvad der skal justeres, og aftales hos skrædderen.",
+  price_note: "Prisen på tilpasning afhænger af, hvad der skal justeres. Den får du af skrædderen, før vi går i gang.",
+
+  // Grupper
+  group_eyebrow: "Bryllup · Galla · Firmafest",
+  group_h2: "Skal I være",
+  group_h2_accent: "flere?",
+  group_text:
+    "Book en tid til hele selskabet, uanset om det er gommen og forloverne, studenterne til gallafesten eller kollegaerne. Vi hjælper jer med at finde jakkesæt, der passer sammen, og skrædderen tilpasser hvert enkelt.",
+  group_cta: "Book tid til selskabet",
+
+  // Spørgsmål & svar
+  faq_eyebrow: "Spørgsmål & svar",
+  faq_h2: "Godt at",
+  faq_h2_accent: "vide",
+  faq_1_q: "Hvad koster et jakkesæt?",
+  faq_1_a: "Vores jakkesæt starter fra {price}, og prisen på tilpasning afhænger af, hvad der skal justeres. Den får du af skrædderen, før vi går i gang.",
+  faq_2_q: "Hvad er jakkesættene lavet af?",
+  faq_2_a: "Alle vores jakkesæt er i ægte uld, ikke polyester. Uld ånder, holder formen og falder pænere, så jakkesættet ser godt ud længere.",
+  faq_3_q: "Hvad er forskellen på tilpasset og skræddersyet?",
+  faq_3_a: "Et skræddersyet jakkesæt bliver syet fra bunden og tager typisk flere uger. Vi starter med et færdigt jakkesæt i den størrelse, der passer dig bedst, og så justerer skrædderen det til dine mål. Det sidder næsten som skræddersyet, men koster langt mindre, og du slipper for den lange ventetid.",
+  faq_4_q: "Hvor lang tid tager det?",
+  faq_4_a: "Jakkesættet ligger allerede på lager, så du venter kun på tilpasningen. Hvor lang tid den tager, afhænger af, hvad der skal justeres. Skrædderen giver dig en dato, når du er til prøvning.",
+  faq_5_q: "Skal jeg booke tid?",
+  faq_5_a: "Vi anbefaler, at du booker en tid, så vi har god tid til dig. Det er gratis og uforpligtende at komme og prøve jakkesæt.",
+  faq_6_q: "Kan vi komme flere, fx til et bryllup?",
+  faq_6_a: "Ja. Book en tid til hele selskabet, så hjælper vi jer med at finde jakkesæt, der passer sammen, og skrædderen tilpasser hvert enkelt.",
 
   // Om
   about_eyebrow: "Om Atelier",
@@ -118,7 +144,7 @@ const da = {
   book_h2: "Book din",
   book_h2_accent: "prøvning",
   book_intro:
-    "Udfyld formularen, så kontakter vi dig og aftaler et tidspunkt, hvor du kan prøve jakkesæt. Du er også velkommen til at ringe eller skrive direkte.",
+    "Udfyld formularen, så kontakter vi dig og aftaler et tidspunkt, hvor du kan prøve jakkesæt. Det er gratis og uforpligtende. Du er også velkommen til at ringe eller skrive direkte.",
   book_phone: "Telefon",
   book_email: "E-mail",
   book_address: "Adresse",
@@ -131,6 +157,8 @@ const da = {
   occ_business: "Business",
   occ_wedding: "Bryllup",
   occ_tux: "Smoking / Black tie",
+  occ_galla: "Galla / fest",
+  occ_group: "Gruppe / bryllupsselskab",
   occ_other: "Andet",
   form_date: "Ønsket dato",
   form_message: "Besked",
@@ -166,6 +194,7 @@ const en: Record<TranslationKey, string> = {
   nav_lookbook: "Lookbook",
   nav_prices: "Price",
   nav_about: "About",
+  nav_faq: "Questions & answers",
   nav_book: "Book now",
   nav_menu_open: "Open menu",
   nav_menu_close: "Close menu",
@@ -210,7 +239,7 @@ const en: Record<TranslationKey, string> = {
   proc_h2: "From the rack to",
   proc_h2_accent: "a perfect fit",
   proc_1_title: "Book a time",
-  proc_1_desc: "Pick a time that suits you and drop by without any rush.",
+  proc_1_desc: "Pick a time that suits you. It's free and without obligation.",
   proc_2_title: "Find your suit",
   proc_2_desc: "Try suits from our stock and find the cut, colour and size that suit you.",
   proc_3_title: "Fitting with the tailor",
@@ -234,10 +263,10 @@ const en: Record<TranslationKey, string> = {
   why_3_desc: "The tailoring experience shouldn't cost a fortune. We keep the price down, not the quality.",
   why_4_title: "Large selection in stock",
   why_4_desc: "Plenty of cuts, colours and sizes to choose from, for every day and celebrations.",
-  why_5_title: "See it before you buy",
-  why_5_desc: "You try on the actual suit instead of choosing from a fabric swatch.",
-  why_6_title: "Personal advice",
-  why_6_desc: "We help you find the suit that suits both you and the occasion.",
+  why_5_title: "Ready fast",
+  why_5_desc: "The suit is already in stock, so you only wait for the alterations. Not for it to be made from scratch.",
+  why_6_title: "See it before you buy",
+  why_6_desc: "You try on the actual suit instead of choosing from a fabric swatch.",
 
   price_eyebrow: "Price",
   price_h2: "A suit that fits,",
@@ -251,7 +280,30 @@ const en: Record<TranslationKey, string> = {
   price_f3: "Fitting with our tailor",
   price_f4: "Ready for pick-up",
   price_cta: "Book now",
-  price_note: "The price of alterations depends on what needs adjusting and is agreed with the tailor.",
+  price_note: "The price of alterations depends on what needs adjusting. The tailor gives it to you before any work begins.",
+
+  group_eyebrow: "Weddings · Galas · Company parties",
+  group_h2: "Coming as a",
+  group_h2_accent: "group?",
+  group_text:
+    "Book a time for the whole party, whether it's the groom and best men, students heading to their gala or colleagues. We help you find suits that go together, and the tailor fits each one.",
+  group_cta: "Book for your group",
+
+  faq_eyebrow: "Questions & answers",
+  faq_h2: "Good to",
+  faq_h2_accent: "know",
+  faq_1_q: "What does a suit cost?",
+  faq_1_a: "Our suits start from {price}, and the price of alterations depends on what needs adjusting. The tailor gives it to you before any work begins.",
+  faq_2_q: "What are the suits made of?",
+  faq_2_a: "All our suits are real wool, not polyester. Wool breathes, holds its shape and drapes better, so the suit looks good for longer.",
+  faq_3_q: "What is the difference between fitted and bespoke?",
+  faq_3_a: "A bespoke suit is made from scratch and usually takes several weeks. We start from a finished suit in the size that fits you best, and the tailor adjusts it to your measurements. It fits almost like bespoke, but costs far less, and you skip the long wait.",
+  faq_4_q: "How long does it take?",
+  faq_4_a: "The suit is already in stock, so you only wait for the alterations. How long they take depends on what needs adjusting. The tailor gives you a date at your fitting.",
+  faq_5_q: "Do I need to book an appointment?",
+  faq_5_a: "We recommend booking a time so we can give you our full attention. Coming in to try on suits is free and without obligation.",
+  faq_6_q: "Can we come as a group, e.g. for a wedding?",
+  faq_6_a: "Yes. Book a time for the whole party, and we will help you find suits that go together. The tailor fits each one.",
 
   about_eyebrow: "About Atelier",
   about_h2: "Tailored fit.",
@@ -266,7 +318,7 @@ const en: Record<TranslationKey, string> = {
   book_h2: "Book your",
   book_h2_accent: "fitting",
   book_intro:
-    "Fill in the form and we will contact you to arrange a time to try on suits. You are also welcome to call or write to us directly.",
+    "Fill in the form and we will contact you to arrange a time to try on suits. It's free and without obligation. You are also welcome to call or write to us directly.",
   book_phone: "Phone",
   book_email: "Email",
   book_address: "Address",
@@ -279,6 +331,8 @@ const en: Record<TranslationKey, string> = {
   occ_business: "Business",
   occ_wedding: "Wedding",
   occ_tux: "Tuxedo / Black tie",
+  occ_galla: "Gala / party",
+  occ_group: "Group / wedding party",
   occ_other: "Other",
   form_date: "Preferred date",
   form_message: "Message",
@@ -305,3 +359,6 @@ const en: Record<TranslationKey, string> = {
 };
 
 export const translations: Record<Lang, Record<TranslationKey, string>> = { da, en };
+
+/** Spørgsmål & svar: faq_1_q/faq_1_a … faq_6_q/faq_6_a */
+export const FAQ_NUMBERS = [1, 2, 3, 4, 5, 6] as const;

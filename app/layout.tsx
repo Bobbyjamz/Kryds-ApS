@@ -22,7 +22,7 @@ const sans = Jost({
   display: "swap",
 });
 
-const title = "Atelier Copenhagen — Skrædderoplevelsen for små penge";
+const title = `Jakkesæt i København fra ${formatPrice(startPrice, "da")} | Atelier Copenhagen`;
 const description = `Jakkesæt i ægte uld fra vores lager, tilpasset af skrædder i København. Næsten skræddersyet, fra ${formatPrice(startPrice, "da")}. Business, bryllup og smoking.`;
 
 export const metadata: Metadata = {

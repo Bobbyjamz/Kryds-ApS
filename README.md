@@ -47,7 +47,7 @@ læg bare billedet i `public/billeder/` med det rigtige navn, så dukker det op 
 |-----------------------------------------|------------------------|
 | Telefon, e-mail, adresse, åbningstider, Instagram/Facebook, CVR | `lib/site.ts` |
 | Startpris ("Jakkesæt fra 1.699 kr.")    | `lib/site.ts` → `startPrice` |
-| Alle tekster på dansk og engelsk        | `lib/translations.ts`  |
+| Alle tekster på dansk og engelsk, inkl. spørgsmål & svar (`faq_*`) | `lib/translations.ts`  |
 | Privatlivspolitik                       | `app/privatlivspolitik/page.tsx` |
 
 > **OBS:** Telefon og e-mail er midlertidigt sat til KrydsByg's. Skift dem i `lib/site.ts`.

@@ -12,6 +12,7 @@ const LINKS: { href: string; key: TranslationKey }[] = [
   { href: "/#lookbook", key: "nav_lookbook" },
   { href: "/#priser", key: "nav_prices" },
   { href: "/#om", key: "nav_about" },
+  { href: "/#faq", key: "nav_faq" },
   { href: "/#book", key: "nav_book" },
 ];
 
