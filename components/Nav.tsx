@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import type { TranslationKey } from "@/lib/translations";
 import { site, phoneHref } from "@/lib/site";
 
@@ -15,16 +16,34 @@ const LINKS: { href: string; key: TranslationKey }[] = [
   { href: "/#om", key: "nav_about" },
 ];
 
-function LangToggle({ className = "" }: { className?: string }) {
+const TOGGLE_CLASS =
+  "flex items-center justify-center h-[30px] font-sans text-[11px] tracking-[.2em] uppercase text-muted hover:text-gold border border-[var(--hairline)] hover:border-gold/50 transition-colors select-none";
+
+function LangToggle() {
   const { lang, t, toggle } = useLanguage();
   return (
-    <button
-      onClick={toggle}
-      aria-label={t("lang_switch")}
-      title={t("lang_switch")}
-      className={`font-sans text-[11px] tracking-[.2em] uppercase text-muted hover:text-gold border border-[var(--hairline)] hover:border-gold/50 px-[10px] py-[6px] transition-colors select-none min-w-[40px] text-center ${className}`}
-    >
+    <button onClick={toggle} aria-label={t("lang_switch")} title={t("lang_switch")} className={`${TOGGLE_CLASS} min-w-[40px] px-[10px]`}>
       {lang === "da" ? "EN" : "DA"}
+    </button>
+  );
+}
+
+function ThemeToggle() {
+  const { theme, toggle } = useTheme();
+  const { t } = useLanguage();
+  const label = theme === "dark" ? t("theme_to_light") : t("theme_to_dark");
+  return (
+    <button onClick={toggle} aria-label={label} title={label} className={`${TOGGLE_CLASS} w-[30px]`}>
+      {theme === "dark" ? (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" />
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" />
+        </svg>
+      ) : (
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+      )}
     </button>
   );
 }
@@ -68,10 +87,10 @@ export default function Nav() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-[500] flex items-center justify-between px-[52px] max-[900px]:px-5"
+        className="fixed top-0 left-0 right-0 z-[500] flex items-center justify-between gap-4 px-[52px] max-[900px]:px-5 max-[400px]:px-4"
         style={{
           height,
-          background: scrolled || menuOpen ? "rgba(23,24,29,.92)" : "transparent",
+          background: scrolled || menuOpen ? "rgb(var(--c-black) / .92)" : "transparent",
           backdropFilter: scrolled ? "blur(14px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
           borderBottom: `1px solid ${scrolled ? "var(--hairline)" : "transparent"}`,
@@ -81,7 +100,7 @@ export default function Nav() {
       >
         <Logo />
 
-        <ul className="flex gap-8 list-none items-center">
+        <ul className="flex gap-8 list-none items-center max-[1100px]:gap-3">
           {LINKS.map(({ href, key }) => (
             <li key={href} className="max-[1100px]:hidden">
               <Link
@@ -92,7 +111,8 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <li className="max-[1100px]:hidden">
+          <li className="flex items-center gap-2">
+            <ThemeToggle />
             <LangToggle />
           </li>
           <li className="max-[560px]:hidden">
@@ -130,7 +150,7 @@ export default function Nav() {
       {menuOpen && (
         <div
           className="fixed inset-0 z-[490] flex flex-col px-7 overflow-y-auto animate-fadeIn min-[1101px]:hidden"
-          style={{ paddingTop: height + 28, paddingBottom: 32, background: "#17181D" }}
+          style={{ paddingTop: height + 28, paddingBottom: 32, background: "rgb(var(--c-black))" }}
         >
           <nav className="flex flex-col gap-2">
             {LINKS.map(({ href, key }) => (
@@ -152,8 +172,6 @@ export default function Nav() {
           >
             {t("nav_book")}
           </Link>
-
-          <LangToggle className="mt-8 self-start" />
 
           {(site.phone || site.email) && (
             <div className="mt-auto pt-8 border-t border-[var(--hairline)] flex flex-col gap-1">

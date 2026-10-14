@@ -2,12 +2,13 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { TranslationKey } from "@/lib/translations";
+import { startPrice, formatPrice } from "@/lib/site";
 
 const KEYS: TranslationKey[] = ["ticker_1", "ticker_2", "ticker_3", "ticker_4", "ticker_5", "ticker_6", "ticker_7", "ticker_8"];
 
 export default function Ticker() {
-  const { t } = useLanguage();
-  const items = KEYS.map((k) => t(k));
+  const { t, lang } = useLanguage();
+  const items = KEYS.map((k) => t(k).replace("{price}", formatPrice(startPrice, lang)));
 
   return (
     <div aria-hidden="true" className="border-y border-gold/20 bg-black2 h-[58px] overflow-hidden flex items-center whitespace-nowrap">

@@ -1,3 +1,5 @@
+import type { Lang } from "./translations";
+
 /**
  * Virksomhedsoplysninger — ret dem her, så opdateres hele siden.
  * Tomme felter ("") bliver automatisk skjult på siden.
@@ -27,12 +29,18 @@ export const site = {
   showImageHints: true,
 };
 
-/** Fra-priser i kr. pr. pakke. null = "Kontakt for pris". */
-export const prices: Record<"business" | "signature" | "ceremony", number | null> = {
-  business: null,
-  signature: null,
-  ceremony: null,
-};
+/** Startpris i kr. for et jakkesæt — vises som "Jakkesæt fra 1.699 kr." */
+export const startPrice = 1699;
+
+/** Kun beløbet, fx "1.699" (dansk) eller "1,699" (engelsk) */
+export function formatAmount(amount: number, lang: Lang): string {
+  return amount.toLocaleString(lang === "da" ? "da-DK" : "en-GB");
+}
+
+/** Beløb med valuta, fx "1.699 kr." eller "DKK 1,699" */
+export function formatPrice(amount: number, lang: Lang): string {
+  return lang === "da" ? `${formatAmount(amount, lang)} kr.` : `DKK ${formatAmount(amount, lang)}`;
+}
 
 export function siteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;

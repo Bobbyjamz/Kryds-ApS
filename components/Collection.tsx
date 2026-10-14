@@ -11,7 +11,6 @@ const ITEMS: { slot: ImageSlot; title: TranslationKey; desc: TranslationKey }[] 
   { slot: "kollektion-business", title: "col_business_title", desc: "col_business_desc" },
   { slot: "kollektion-bryllup",  title: "col_wedding_title",  desc: "col_wedding_desc" },
   { slot: "kollektion-smoking",  title: "col_tux_title",      desc: "col_tux_desc" },
-  { slot: "kollektion-skjorter", title: "col_shirts_title",   desc: "col_shirts_desc" },
 ];
 
 export default function Collection() {
@@ -23,12 +22,12 @@ export default function Collection() {
       <div className="container-x">
         <SectionHeading eyebrow={t("col_eyebrow")} title={t("col_h2")} accent={t("col_h2_accent")} intro={t("col_intro")} />
 
-        <div className="grid grid-cols-4 gap-6 mt-16 max-[1100px]:grid-cols-2 max-[560px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-6 mt-16 max-[760px]:grid-cols-1 max-[760px]:max-w-[480px] max-[760px]:gap-12">
           {ITEMS.map((item) => (
             <article key={item.slot} className="group reveal">
               <ModelImage
                 slot={item.slot}
-                sizes="(max-width: 560px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                sizes="(max-width: 760px) 100vw, 33vw"
                 alt={`${t(item.title)} — Atelier Copenhagen`}
               />
               <h3 className="font-serif text-[30px] leading-none mt-7 text-cream transition-colors group-hover:text-gold">

@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="container-x">
         <div className="flex flex-col items-center text-center">
           <Logo variant="full" />
-          <p className="font-sans text-[11px] tracking-[.32em] uppercase text-gold/70 mt-8">{t("footer_tagline")}</p>
+          <p className="font-sans text-[11px] tracking-[.32em] uppercase text-gold mt-8">{t("footer_tagline")}</p>
         </div>
 
         <div className={`grid ${SOCIALS.length > 0 ? "grid-cols-3" : "grid-cols-2"} gap-12 mt-20 pt-14 border-t border-[var(--hairline)] max-[760px]:grid-cols-1 max-[760px]:gap-10 max-[760px]:text-center`}>

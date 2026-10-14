@@ -10,7 +10,7 @@ import type { TranslationKey } from "@/lib/translations";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-const OCCASIONS: TranslationKey[] = ["occ_business", "occ_wedding", "occ_tux", "occ_shirts", "occ_other"];
+const OCCASIONS: TranslationKey[] = ["occ_business", "occ_wedding", "occ_tux", "occ_other"];
 
 function Label({ htmlFor, children, required }: { htmlFor: string; children: React.ReactNode; required?: boolean }) {
   return (
@@ -74,7 +74,7 @@ export default function Booking() {
                 <div>
                   <dt className="font-sans text-[10px] tracking-[.26em] uppercase text-gold">{t("book_phone")}</dt>
                   <dd className="mt-2">
-                    <a href={phoneHref(site.phone)} className="font-serif text-[26px] text-cream no-underline hover:text-gold transition-colors">
+                    <a href={phoneHref(site.phone)} className="font-serif text-[26px] text-cream no-underline hover:text-gold transition-colors lining-nums">
                       {site.phone}
                     </a>
                   </dd>
@@ -180,7 +180,7 @@ export default function Booking() {
               </div>
 
               <label className="flex items-start gap-3 text-[13px] leading-[1.6] text-muted cursor-pointer">
-                <input type="checkbox" name="privacy" required className="mt-[3px] w-4 h-4 accent-[#C8A45A] flex-shrink-0" />
+                <input type="checkbox" name="privacy" required className="mt-[3px] w-4 h-4 accent-gold flex-shrink-0" />
                 <span>
                   {t("form_privacy_1")}{" "}
                   <Link href="/privatlivspolitik" className="text-gold underline-offset-4 hover:underline">
@@ -191,7 +191,7 @@ export default function Booking() {
               </label>
 
               {error && (
-                <p role="alert" className="text-[14px] text-[#E8A598]">
+                <p role="alert" className="text-[14px] text-danger">
                   {error}
                   {state === "error" && site.phone && (
                     <>

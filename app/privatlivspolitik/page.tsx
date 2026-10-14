@@ -53,13 +53,13 @@ export default function PrivacyPage() {
           <Section title="Hvilke oplysninger vi indsamler">
             <p>
               Når du udfylder bookingformularen, modtager vi dit navn, telefonnummer, e-mailadresse, den anledning og dato,
-              du vælger, samt din eventuelle besked. Ved en opmåling registrerer vi også dine mål, så vi kan sy dit tøj.
+              du vælger, samt din eventuelle besked. Når vi tilpasser dit jakkesæt, noterer vi også dine mål.
             </p>
           </Section>
 
           <Section title="Formål og retsgrundlag">
             <p>
-              Vi bruger oplysningerne til at besvare din henvendelse, aftale en tid og levere det tøj, du bestiller.
+              Vi bruger oplysningerne til at besvare din henvendelse, aftale en tid og tilpasse og levere dit jakkesæt.
               Behandlingen sker for at kunne indgå og opfylde en aftale med dig (databeskyttelsesforordningens artikel 6,
               stk. 1, litra b).
             </p>

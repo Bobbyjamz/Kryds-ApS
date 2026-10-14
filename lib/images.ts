@@ -10,7 +10,6 @@ export const IMAGE_SLOTS = {
   "kollektion-business": { file: "kollektion-business",   ratio: "3/4", label: "Business" },
   "kollektion-bryllup":  { file: "kollektion-bryllup",    ratio: "3/4", label: "Bryllup" },
   "kollektion-smoking":  { file: "kollektion-smoking",    ratio: "3/4", label: "Smoking" },
-  "kollektion-skjorter": { file: "kollektion-skjorter",   ratio: "3/4", label: "Skjorter" },
   "lookbook-1":          { file: "lookbook-1",            ratio: "3/4", label: "Lookbook 1" },
   "lookbook-2":          { file: "lookbook-2",            ratio: "3/4", label: "Lookbook 2" },
   "lookbook-3":          { file: "lookbook-3",            ratio: "3/4", label: "Lookbook 3" },

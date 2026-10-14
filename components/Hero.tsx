@@ -2,9 +2,10 @@
 
 import ModelImage from "./ModelImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { startPrice, formatAmount } from "@/lib/site";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const points = [t("hero_point_1"), t("hero_point_2"), t("hero_point_3")];
 
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
       {/* Guldringe som i logoet */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none max-[900px]:hidden">
         <div className="hero-ring" style={{ width: 1100, height: 1100, left: "74%", top: "52%" }} />
-        <div className="hero-ring" style={{ width: 780, height: 780, left: "74%", top: "52%", borderColor: "rgba(200,164,90,.16)" }} />
+        <div className="hero-ring" style={{ width: 780, height: 780, left: "74%", top: "52%", borderColor: "rgb(var(--c-gold) / .18)" }} />
       </div>
 
       <div className="container-x relative z-[1] grid grid-cols-[1.12fr_.88fr] gap-20 items-center max-[900px]:grid-cols-1 max-[900px]:gap-16">
@@ -34,7 +35,14 @@ export default function Hero() {
           >
             {t("hero_desc")}
           </p>
-          <div className="flex flex-wrap gap-4 mt-11 opacity-0 animate-fadeup" style={{ animationDelay: ".6s" }}>
+          <p className="flex items-baseline gap-3 mt-9 opacity-0 animate-fadeup" style={{ animationDelay: ".55s" }}>
+            <span className="font-sans text-[11px] tracking-[.28em] uppercase text-muted">{t("hero_price_label")}</span>
+            <span className="font-serif text-[40px] leading-none text-gold lining-nums">
+              {formatAmount(startPrice, lang)}
+              <span className="text-[22px] ml-[6px]">{t("price_currency")}</span>
+            </span>
+          </p>
+          <div className="flex flex-wrap gap-4 mt-8 opacity-0 animate-fadeup" style={{ animationDelay: ".65s" }}>
             <a href="#book" className="btn-gold">{t("hero_btn_book")}</a>
             <a href="#kollektion" className="btn-outline">{t("hero_btn_collection")}</a>
           </div>
@@ -59,7 +67,7 @@ export default function Hero() {
             slot="hero"
             priority
             sizes="(max-width: 900px) 92vw, 540px"
-            alt="Model i skræddersyet jakkesæt fra Atelier Copenhagen"
+            alt="Model i jakkesæt fra Atelier Copenhagen"
           />
         </div>
       </div>

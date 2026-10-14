@@ -3,7 +3,9 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { site, siteUrl } from "@/lib/site";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { themeInitScript } from "@/lib/theme";
+import { site, siteUrl, startPrice, formatPrice } from "@/lib/site";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -21,8 +23,7 @@ const sans = Jost({
 });
 
 const title = "Atelier Copenhagen — Skrædderoplevelsen for små penge";
-const description =
-  "Skræddersyede jakkesæt i København med personlig opmåling, udvalgte stoffer og fair priser. Business, bryllup, smoking og skjorter efter mål.";
+const description = `Jakkesæt fra vores lager, tilpasset af skrædder i København. Næsten skræddersyet, fra ${formatPrice(startPrice, "da")}. Business, bryllup og smoking.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/" },
   keywords: [
-    "skræddersyet jakkesæt", "jakkesæt København", "skrædder København", "made to measure København",
-    "bryllupsjakkesæt", "smoking", "skjorter efter mål", "billigt skræddersyet jakkesæt", "Atelier Copenhagen",
+    "jakkesæt København", "tilpasset jakkesæt", "billigt jakkesæt", "jakkesæt tilpasning",
+    "bryllupsjakkesæt", "smoking", "skrædder København", "jakkesæt fra lager", "Atelier Copenhagen",
   ],
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/atelier-logo.jpg" },
   openGraph: {
@@ -49,6 +50,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#17181D",
+  colorScheme: "dark light",
 };
 
 const jsonLd = {
@@ -70,15 +72,18 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="da" data-scroll-behavior="smooth" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="da" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body>
-        <LanguageProvider>
-          {children}
-          <ScrollToTop />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+            <ScrollToTop />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

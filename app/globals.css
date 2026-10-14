@@ -3,18 +3,45 @@
 @tailwind utilities;
 
 /* ================================================
-   BRAND — farver taget fra logoet
+   BRAND — farver taget fra logoet (RGB-kanaler, så
+   Tailwind kan lave gennemsigtighed som bg-gold/10)
    ================================================ */
-:root {
-  --black:  theme("colors.black");
-  --black2: theme("colors.black2");
-  --gray:   theme("colors.gray");
-  --gold:   theme("colors.gold");
-  --cream:  theme("colors.cream");
-  --muted:  theme("colors.muted");
-  --hairline: rgba(243, 238, 228, 0.08);
-  --gold-line: rgba(200, 164, 90, 0.22);
+:root,
+[data-theme="dark"] {
+  --c-black:  23 24 29;     /* #17181D — logoets baggrund */
+  --c-black2: 28 29 35;
+  --c-gray:   34 35 41;
+  --c-gray2:  44 45 52;
+  --c-gold:   200 164 90;   /* #C8A45A — logoets guld */
+  --c-gold2:  221 191 126;
+  --c-cream:  243 238 228;  /* tekst */
+  --c-muted:  154 150 140;
+  --c-danger: 232 165 152;
+  --surface-a: #202128;
+  --surface-b: #1A1B21;
+  --hairline: rgb(var(--c-cream) / 0.08);
+  --gold-line: rgb(var(--c-gold) / 0.22);
+  --picker-filter: invert(.75) sepia(.5);
   color-scheme: dark;
+}
+
+/* Hvidt tema — guldet er gjort mørkere, så tekst kan læses på hvid */
+[data-theme="light"] {
+  --c-black:  250 248 244;
+  --c-black2: 243 239 232;
+  --c-gray:   236 231 223;
+  --c-gray2:  222 216 205;
+  --c-gold:   138 106 43;
+  --c-gold2:  112 85 32;
+  --c-cream:  23 24 29;
+  --c-muted:  104 100 92;
+  --c-danger: 168 50 40;
+  --surface-a: #EFEAE1;
+  --surface-b: #E6E0D5;
+  --hairline: rgb(var(--c-cream) / 0.12);
+  --gold-line: rgb(var(--c-gold) / 0.35);
+  --picker-filter: none;
+  color-scheme: light;
 }
 
 /* ================================================
@@ -22,21 +49,22 @@
    ================================================ */
 html { scroll-behavior: smooth; }
 body {
-  background: var(--black);
-  color: var(--cream);
+  background: rgb(var(--c-black));
+  color: rgb(var(--c-cream));
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 300;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color .3s ease, color .3s ease;
 }
 
 [id] { scroll-margin-top: 72px; }
 
-::selection { background: var(--gold); color: var(--black); }
+::selection { background: rgb(var(--c-gold)); color: rgb(var(--c-black)); }
 
-:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+:focus-visible { outline: 1px solid rgb(var(--c-gold)); outline-offset: 3px; }
 
 button, a { touch-action: manipulation; }
 
@@ -68,14 +96,14 @@ button, a { touch-action: manipulation; }
   display: flex; align-items: center; gap: 14px;
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 400; font-size: 11px; letter-spacing: .32em;
-  text-transform: uppercase; color: var(--gold);
+  text-transform: uppercase; color: rgb(var(--c-gold));
 }
 .eyebrow::before {
-  content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+  content: ''; display: block; width: 28px; height: 1px; background: rgb(var(--c-gold));
 }
 .eyebrow-center { justify-content: center; }
 .eyebrow-center::after {
-  content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+  content: ''; display: block; width: 28px; height: 1px; background: rgb(var(--c-gold));
 }
 
 /* ================================================
@@ -83,7 +111,7 @@ button, a { touch-action: manipulation; }
    ================================================ */
 .hero-ring {
   position: absolute; border-radius: 50%; pointer-events: none;
-  border: 1px solid rgba(200, 164, 90, 0.10);
+  border: 1px solid rgb(var(--c-gold) / 0.12);
   transform: translate(-50%, -50%);
 }
 
@@ -100,8 +128,8 @@ button, a { touch-action: manipulation; }
    ================================================ */
 .placeholder-surface {
   background:
-    radial-gradient(120% 80% at 50% 0%, rgba(200, 164, 90, 0.07), transparent 60%),
-    linear-gradient(170deg, #202128 0%, #1A1B21 100%);
+    radial-gradient(120% 80% at 50% 0%, rgb(var(--c-gold) / 0.07), transparent 60%),
+    linear-gradient(170deg, var(--surface-a) 0%, var(--surface-b) 100%);
 }
 
 /* ================================================
@@ -110,7 +138,7 @@ button, a { touch-action: manipulation; }
 .gold-underline { position: relative; }
 .gold-underline::after {
   content: ''; position: absolute; left: 0; bottom: 0;
-  width: 100%; height: 1px; background: var(--gold);
+  width: 100%; height: 1px; background: rgb(var(--c-gold));
   transform: scaleX(0); transform-origin: left; transition: transform .45s ease;
 }
 .group:hover .gold-underline::after,
@@ -119,25 +147,25 @@ button, a { touch-action: manipulation; }
 /* Formularkort med guldlinje i toppen */
 .form-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 1px; background: var(--gold);
+  height: 1px; background: rgb(var(--c-gold));
 }
 
 /* Felter */
 .field {
   width: 100%;
   background: transparent;
-  border: 0; border-bottom: 1px solid rgba(243, 238, 228, 0.16);
+  border: 0; border-bottom: 1px solid rgb(var(--c-cream) / 0.18);
   padding: 10px 0;
-  color: var(--cream);
+  color: rgb(var(--c-cream));
   font-size: 15px; font-weight: 300;
   border-radius: 0;
   transition: border-color .2s;
 }
-.field::placeholder { color: rgba(243, 238, 228, 0.3); }
-.field:focus { outline: none; border-bottom-color: var(--gold); }
+.field::placeholder { color: rgb(var(--c-cream) / 0.4); }
+.field:focus { outline: none; border-bottom-color: rgb(var(--c-gold)); }
 select.field { appearance: none; -webkit-appearance: none; cursor: pointer; }
-select.field option { background: var(--black2); color: var(--cream); }
-input[type="date"].field::-webkit-calendar-picker-indicator { filter: invert(.75) sepia(.5); cursor: pointer; }
+select.field option { background: rgb(var(--c-black2)); color: rgb(var(--c-cream)); }
+input[type="date"].field::-webkit-calendar-picker-indicator { filter: var(--picker-filter); cursor: pointer; }
 
 /* ================================================
    SCROLL REVEAL

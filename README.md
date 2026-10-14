@@ -2,7 +2,10 @@
 
 Hjemmeside for **Atelier Copenhagen** — *Skrædderoplevelsen, for små penge.*
 
-Bygget på samme fundament som krydsbyg.com: **Next.js 15** (App Router) + TypeScript + Tailwind CSS, dansk/engelsk sprogskift og booking-formular der sender mail via **Resend**.
+Jakkesæt fra lager, tilpasset af skrædder, så de sidder næsten som skræddersyet. Fra 1.699 kr.
+
+Bygget på samme fundament som krydsbyg.com: **Next.js 15** (App Router) + TypeScript + Tailwind CSS,
+sort/hvid-tema, dansk/engelsk sprogskift og booking-formular der sender mail via **Resend**.
 
 ## Kom i gang
 
@@ -28,7 +31,6 @@ læg bare billedet i `public/billeder/` med det rigtige navn, så dukker det op 
 | `kollektion-business.jpg` | Kollektion — Business    | 3:4 (portræt)         | 1200 × 1600 px      |
 | `kollektion-bryllup.jpg`  | Kollektion — Bryllup     | 3:4                   | 1200 × 1600 px      |
 | `kollektion-smoking.jpg`  | Kollektion — Smoking     | 3:4                   | 1200 × 1600 px      |
-| `kollektion-skjorter.jpg` | Kollektion — Skjorter    | 3:4                   | 1200 × 1600 px      |
 | `lookbook-1.jpg` … `lookbook-6.jpg` | Lookbook-galleriet | 3:4                 | 1200 × 1600 px      |
 | `atelier.jpg`             | "Om Atelier"-sektionen   | 4:5                   | 1600 × 2000 px      |
 
@@ -44,7 +46,7 @@ læg bare billedet i `public/billeder/` med det rigtige navn, så dukker det op 
 | Hvad                                    | Fil                    |
 |-----------------------------------------|------------------------|
 | Telefon, e-mail, adresse, åbningstider, Instagram/Facebook, CVR | `lib/site.ts` |
-| Priser pr. pakke (`null` = "Kontakt for pris") | `lib/site.ts` → `prices` |
+| Startpris ("Jakkesæt fra 1.699 kr.")    | `lib/site.ts` → `startPrice` |
 | Alle tekster på dansk og engelsk        | `lib/translations.ts`  |
 | Privatlivspolitik                       | `app/privatlivspolitik/page.tsx` |
 
@@ -75,9 +77,9 @@ app/
 ├── privatlivspolitik/      # Privatlivspolitik
 └── api/booking/            # Booking-formular → mail
 components/                 # Sektioner: Hero, Collection, Process, Lookbook, WhyAtelier, Pricing, About, Booking …
-contexts/                   # Sprog (DA/EN) + billeder
+contexts/                   # Tema (sort/hvid), sprog (DA/EN) + billeder
 lib/
-├── site.ts                 # Virksomhedsoplysninger + priser
+├── site.ts                 # Virksomhedsoplysninger + startpris
 ├── images.ts               # Billedpladser
 └── translations.ts         # Alle tekster
 public/
@@ -90,4 +92,6 @@ public/
 ## Brand
 
 - Baggrund `#17181D` og guld `#C8A45A` — taget direkte fra logoet
+- Hvidt tema: lys baggrund `#FAF8F4` og mørkere guld `#8A6A2B`, så teksten kan læses
+- Farverne ligger som variabler i `app/globals.css`; knappen i menuen skifter mellem sort og hvid, og valget huskes
 - Cormorant Garamond (overskrifter) + Jost (brødtekst)
