@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#17181D",
+  themeColor: "#FAF8F4",
   colorScheme: "dark light",
 };
 
@@ -72,7 +72,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="da" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
+    <html lang="da" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

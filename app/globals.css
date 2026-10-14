@@ -6,26 +6,8 @@
    BRAND — farver taget fra logoet (RGB-kanaler, så
    Tailwind kan lave gennemsigtighed som bg-gold/10)
    ================================================ */
+/* Hvidt tema (standard) — guldet er gjort mørkere, så tekst kan læses på hvid */
 :root,
-[data-theme="dark"] {
-  --c-black:  23 24 29;     /* #17181D — logoets baggrund */
-  --c-black2: 28 29 35;
-  --c-gray:   34 35 41;
-  --c-gray2:  44 45 52;
-  --c-gold:   200 164 90;   /* #C8A45A — logoets guld */
-  --c-gold2:  221 191 126;
-  --c-cream:  243 238 228;  /* tekst */
-  --c-muted:  154 150 140;
-  --c-danger: 232 165 152;
-  --surface-a: #202128;
-  --surface-b: #1A1B21;
-  --hairline: rgb(var(--c-cream) / 0.08);
-  --gold-line: rgb(var(--c-gold) / 0.22);
-  --picker-filter: invert(.75) sepia(.5);
-  color-scheme: dark;
-}
-
-/* Hvidt tema — guldet er gjort mørkere, så tekst kan læses på hvid */
 [data-theme="light"] {
   --c-black:  250 248 244;
   --c-black2: 243 239 232;
@@ -42,6 +24,25 @@
   --gold-line: rgb(var(--c-gold) / 0.35);
   --picker-filter: none;
   color-scheme: light;
+}
+
+/* Sort tema — logoets egne farver */
+[data-theme="dark"] {
+  --c-black:  23 24 29;     /* #17181D — logoets baggrund */
+  --c-black2: 28 29 35;
+  --c-gray:   34 35 41;
+  --c-gray2:  44 45 52;
+  --c-gold:   200 164 90;   /* #C8A45A — logoets guld */
+  --c-gold2:  221 191 126;
+  --c-cream:  243 238 228;  /* tekst */
+  --c-muted:  154 150 140;
+  --c-danger: 232 165 152;
+  --surface-a: #202128;
+  --surface-b: #1A1B21;
+  --hairline: rgb(var(--c-cream) / 0.08);
+  --gold-line: rgb(var(--c-gold) / 0.22);
+  --picker-filter: invert(.75) sepia(.5);
+  color-scheme: dark;
 }
 
 /* ================================================

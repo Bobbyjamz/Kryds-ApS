@@ -93,5 +93,5 @@ public/
 
 - Baggrund `#17181D` og guld `#C8A45A` — taget direkte fra logoet
 - Hvidt tema: lys baggrund `#FAF8F4` og mørkere guld `#8A6A2B`, så teksten kan læses
-- Farverne ligger som variabler i `app/globals.css`; knappen i menuen skifter mellem sort og hvid, og valget huskes
+- Siden starter i hvidt tema; knappen i menuen skifter til sort, og valget huskes. Farverne ligger som variabler i `app/globals.css`
 - Cormorant Garamond (overskrifter) + Jost (brødtekst)
