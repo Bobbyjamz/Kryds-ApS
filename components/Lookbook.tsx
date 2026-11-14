@@ -7,7 +7,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import type { ImageSlot } from "@/lib/images";
 import { site } from "@/lib/site";
 
-const SLOTS: ImageSlot[] = ["lookbook-1", "lookbook-2", "lookbook-3", "lookbook-4", "lookbook-5", "lookbook-6"];
+const SLOTS: ImageSlot[] = [
+  "lookbook-1", "lookbook-2", "lookbook-3", "lookbook-4", "lookbook-5", "lookbook-6",
+  "lookbook-7", "lookbook-8", "lookbook-9", "lookbook-10", "lookbook-11", "lookbook-12",
+];
 
 export default function Lookbook() {
   const ref = useReveal<HTMLElement>();

@@ -31,7 +31,7 @@ læg bare billedet i `public/billeder/` med det rigtige navn, så dukker det op 
 | `kollektion-business.jpg` | Kollektion — Business    | 3:4 (portræt)         | 1200 × 1600 px      |
 | `kollektion-bryllup.jpg`  | Kollektion — Bryllup     | 3:4                   | 1200 × 1600 px      |
 | `kollektion-smoking.jpg`  | Kollektion — Smoking     | 3:4                   | 1200 × 1600 px      |
-| `lookbook-1.jpg` … `lookbook-6.jpg` | Lookbook-galleriet | 3:4                 | 1200 × 1600 px      |
+| `lookbook-1.jpg` … `lookbook-12.jpg` | Lookbook-galleriet | 3:4                 | 1200 × 1600 px      |
 | `atelier.jpg`             | "Om Atelier"-sektionen   | 4:5                   | 1600 × 2000 px      |
 
 - Formaterne `.jpg`, `.jpeg`, `.png`, `.webp` og `.avif` virker alle.
