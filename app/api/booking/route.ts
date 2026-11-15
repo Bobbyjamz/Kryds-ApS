@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
   const email = field(body.email, 160);
   const occasion = field(body.occasion, 80);
   const date = field(body.date, 20);
+  const time = field(body.time, 40);
   const message = field(body.message, 2000);
 
   if (!name || !phone || !email) {
@@ -49,7 +50,7 @@ export async function POST(req: NextRequest) {
       console.error("[booking] RESEND_API_KEY mangler — booking kunne ikke sendes");
       return NextResponse.json({ error: "Booking er ikke sat op endnu" }, { status: 503 });
     }
-    console.warn("[booking] RESEND_API_KEY ikke sat — booking modtaget (udvikling):", { name, phone, email, occasion, date });
+    console.warn("[booking] RESEND_API_KEY ikke sat — booking modtaget (udvikling):", { name, phone, email, occasion, date, time });
     return NextResponse.json({ ok: true });
   }
 
@@ -63,6 +64,7 @@ export async function POST(req: NextRequest) {
     ["E-mail", email],
     ["Anledning", occasion || "–"],
     ["Ønsket dato", date || "–"],
+    ["Tidsrum", time || "–"],
   ];
   const sentAt = new Date().toLocaleString("da-DK", { timeZone: "Europe/Copenhagen" });
 

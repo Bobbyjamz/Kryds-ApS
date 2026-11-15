@@ -115,6 +115,16 @@ export default function Nav() {
             <ThemeToggle />
             <LangToggle />
           </li>
+          {site.phone && (
+            <li className="max-[1280px]:hidden">
+              <a
+                href={phoneHref(site.phone)}
+                className="font-sans text-[13px] tracking-[.08em] text-cream/80 no-underline transition-colors hover:text-gold lining-nums whitespace-nowrap"
+              >
+                {site.phone}
+              </a>
+            </li>
+          )}
           <li className="max-[560px]:hidden">
             <Link
               href="/#book"

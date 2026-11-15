@@ -1,16 +1,22 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
 import { useReveal } from "@/hooks/useReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { site, phoneHref } from "@/lib/site";
+import { site, phoneHref, smsHref } from "@/lib/site";
 import type { TranslationKey } from "@/lib/translations";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
 const OCCASIONS: TranslationKey[] = ["occ_business", "occ_wedding", "occ_tux", "occ_galla", "occ_group", "occ_other"];
+const TIMES: TranslationKey[] = ["time_morning", "time_afternoon", "time_evening", "time_any"];
+
+/** Dagens dato som "YYYY-MM-DD" i dansk tid, så man ikke kan vælge en dato i fortiden */
+function todayIso(): string {
+  return new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Copenhagen" });
+}
 
 function Label({ htmlFor, children, required }: { htmlFor: string; children: React.ReactNode; required?: boolean }) {
   return (
@@ -26,6 +32,9 @@ export default function Booking() {
   const { t } = useLanguage();
   const [state, setState] = useState<FormState>("idle");
   const [error, setError] = useState<string | null>(null);
+  // Sættes først i browseren, så den statiske side ikke låser en gammel dato fast
+  const [minDate, setMinDate] = useState<string | undefined>(undefined);
+  useEffect(() => setMinDate(todayIso()), []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,6 +56,7 @@ export default function Booking() {
           email: fd.get("email"),
           occasion: fd.get("occasion"),
           date: fd.get("date"),
+          time: fd.get("time"),
           message: fd.get("message"),
           website: fd.get("website"), // honeypot
           acceptedPrivacy: true,
@@ -67,6 +77,16 @@ export default function Booking() {
       <div className="container-x grid grid-cols-[.9fr_1.1fr] gap-24 items-start max-[1000px]:grid-cols-1 max-[1000px]:gap-14">
         <div>
           <SectionHeading eyebrow={t("book_eyebrow")} title={t("book_h2")} accent={t("book_h2_accent")} intro={t("book_intro")} />
+
+          {site.phone && (
+            <div className="reveal mt-10 flex flex-col gap-4">
+              <p className="font-sans text-[10px] tracking-[.26em] uppercase text-gold">{t("book_quick")}</p>
+              <div className="flex flex-wrap gap-3">
+                <a href={phoneHref(site.phone)} className="btn-gold">{t("book_call")}</a>
+                <a href={smsHref(site.phone)} className="btn-outline">{t("book_sms")}</a>
+              </div>
+            </div>
+          )}
 
           {hasInfo && (
             <dl className="reveal mt-12 flex flex-col gap-7 border-t border-[var(--hairline)] pt-10">
@@ -163,9 +183,23 @@ export default function Booking() {
                 </div>
                 <div>
                   <Label htmlFor="date">{t("form_date")}</Label>
-                  <input id="date" name="date" type="date" className="field" />
+                  <input id="date" name="date" type="date" min={minDate} className="field" />
                 </div>
               </div>
+
+              <fieldset>
+                <legend className="block font-sans text-[10px] tracking-[.26em] uppercase text-muted">{t("form_time")}</legend>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {TIMES.map((k) => (
+                    <label key={k} className="cursor-pointer">
+                      <input type="radio" name="time" value={t(k)} className="peer sr-only" />
+                      <span className="inline-block px-4 py-2 border border-[var(--hairline)] text-[14px] text-cream/80 transition-colors peer-checked:border-gold peer-checked:text-gold peer-focus-visible:outline peer-focus-visible:outline-1 peer-focus-visible:outline-gold hover:border-gold/50">
+                        {t(k)}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
 
               <div>
                 <Label htmlFor="message">{t("form_message")}</Label>

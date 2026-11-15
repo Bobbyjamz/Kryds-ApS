@@ -10,8 +10,8 @@ export const site = {
   legalName: "Atelier",
   cvr: "",
 
-  // TODO: Midlertidigt KrydsByg's kontaktinfo — skift til Atelier's egen
-  phone: "+45 42 77 88 66",
+  phone: "+45 42 77 98 66",
+  // TODO: Midlertidigt KrydsByg's e-mail — skift til Atelier's egen
   email: "kontakt@krydsbyg.com",
 
   /** Fx "Store Kongensgade 1, 1264 København K" */
@@ -50,4 +50,8 @@ export function siteUrl(): string {
 
 export function phoneHref(phone: string): string {
   return `tel:${phone.replace(/\s/g, "")}`;
+}
+
+export function smsHref(phone: string): string {
+  return `sms:${phone.replace(/\s/g, "")}`;
 }

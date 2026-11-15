@@ -11,6 +11,7 @@ import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
+import MobileBookBar from "@/components/MobileBookBar";
 import { ImagesProvider } from "@/contexts/ImagesContext";
 import { resolveImages } from "@/lib/resolve-images";
 import { startPrice, formatPrice } from "@/lib/site";
@@ -51,6 +52,7 @@ export default function Home() {
         <Booking />
       </main>
       <Footer />
+      <MobileBookBar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </ImagesProvider>
   );

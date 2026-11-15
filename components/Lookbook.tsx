@@ -35,6 +35,10 @@ export default function Lookbook() {
             </div>
           ))}
         </div>
+
+        <div className="flex justify-center mt-28 max-[900px]:mt-12">
+          <a href="#book" className="btn-gold">{t("look_cta")}</a>
+        </div>
       </div>
     </section>
   );
