@@ -1,5 +1,10 @@
 /** Galleriets billeder (genereret af Billedscripts/galleri.py — ret ikke i hånden). */
-export const GALLERY: { src: string; width: number; height: number }[] = [
+export type GalleryImage = { src: string; width: number; height: number };
+
+/** Antal billeder i den lille lookbook-karrusel på forsiden (de første i listen) */
+export const LOOKBOOK_COUNT = 10;
+
+export const GALLERY: GalleryImage[] = [
   { src: "/galleri/01.jpg", width: 1120, height: 1400 },
   { src: "/galleri/02.jpg", width: 1120, height: 1400 },
   { src: "/galleri/03.jpg", width: 1050, height: 1400 },

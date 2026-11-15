@@ -175,9 +175,8 @@ button, a { touch-action: manipulation; }
   width: max-content; margin: 0; list-style: none;
   animation: galleryScroll linear infinite;
 }
-.gallery:hover .gallery-track,
-.gallery[data-paused="true"] .gallery-track { animation-play-state: paused; }
-.gallery-item { flex: none; height: clamp(300px, 56vh, 560px); }
+.gallery:hover .gallery-track { animation-play-state: paused; }
+.gallery-item { flex: none; height: clamp(240px, 36vh, 360px); }
 .gallery-item img { height: 100%; width: auto; display: block; }
 @keyframes galleryScroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {

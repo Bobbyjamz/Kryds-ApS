@@ -11,18 +11,6 @@ export const IMAGE_SLOTS = {
   "variant-navy":        { file: "variant-navy",          ratio: "3/4", label: "Variant: navy" },
   "variant-naalestribe": { file: "variant-naalestribe",   ratio: "3/4", label: "Variant: nålestribe" },
   "variant-vest":        { file: "variant-vest",          ratio: "3/4", label: "Variant: vest" },
-  "lookbook-1":          { file: "lookbook-1",            ratio: "3/4", label: "Lookbook 1" },
-  "lookbook-2":          { file: "lookbook-2",            ratio: "3/4", label: "Lookbook 2" },
-  "lookbook-3":          { file: "lookbook-3",            ratio: "3/4", label: "Lookbook 3" },
-  "lookbook-4":          { file: "lookbook-4",            ratio: "3/4", label: "Lookbook 4" },
-  "lookbook-5":          { file: "lookbook-5",            ratio: "3/4", label: "Lookbook 5" },
-  "lookbook-6":          { file: "lookbook-6",            ratio: "3/4", label: "Lookbook 6" },
-  "lookbook-7":          { file: "lookbook-7",            ratio: "3/4", label: "Lookbook 7" },
-  "lookbook-8":          { file: "lookbook-8",            ratio: "3/4", label: "Lookbook 8" },
-  "lookbook-9":          { file: "lookbook-9",            ratio: "3/4", label: "Lookbook 9" },
-  "lookbook-10":         { file: "lookbook-10",           ratio: "3/4", label: "Lookbook 10" },
-  "lookbook-11":         { file: "lookbook-11",           ratio: "3/4", label: "Lookbook 11" },
-  "lookbook-12":         { file: "lookbook-12",           ratio: "3/4", label: "Lookbook 12" },
   atelier:             { file: "atelier",               ratio: "4/5", label: "Atelieret" },
 } as const;
 
