@@ -7,9 +7,10 @@
  */
 export const IMAGE_SLOTS = {
   hero:                  { file: "hero",                  ratio: "4/5", label: "Forside" },
-  "kollektion-business": { file: "kollektion-business",   ratio: "3/4", label: "Business" },
-  "kollektion-bryllup":  { file: "kollektion-bryllup",    ratio: "3/4", label: "Bryllup" },
-  "kollektion-smoking":  { file: "kollektion-smoking",    ratio: "3/4", label: "Smoking" },
+  "variant-sort":        { file: "variant-sort",          ratio: "3/4", label: "Variant: sort" },
+  "variant-navy":        { file: "variant-navy",          ratio: "3/4", label: "Variant: navy" },
+  "variant-naalestribe": { file: "variant-naalestribe",   ratio: "3/4", label: "Variant: nålestribe" },
+  "variant-vest":        { file: "variant-vest",          ratio: "3/4", label: "Variant: vest" },
   "lookbook-1":          { file: "lookbook-1",            ratio: "3/4", label: "Lookbook 1" },
   "lookbook-2":          { file: "lookbook-2",            ratio: "3/4", label: "Lookbook 2" },
   "lookbook-3":          { file: "lookbook-3",            ratio: "3/4", label: "Lookbook 3" },

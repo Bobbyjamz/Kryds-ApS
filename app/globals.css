@@ -137,25 +137,22 @@ button, a { touch-action: manipulation; }
 [data-theme="light"] .wordmark-sub { text-shadow: none; }
 
 /* ================================================
-   HERO — billede i fuld skærm med mørk toning
+   HERO — brand-video; mørk toning på mobil, guldramme på computer
    ================================================ */
 .hero-shade {
   background:
-    linear-gradient(90deg, rgb(var(--c-black) / .92) 0%, rgb(var(--c-black) / .65) 45%, rgb(var(--c-black) / .15) 100%),
-    linear-gradient(0deg, rgb(var(--c-black)) 0%, transparent 35%);
+    linear-gradient(0deg, rgb(var(--c-black)) 0%, rgb(var(--c-black) / .6) 22%, transparent 48%),
+    linear-gradient(180deg, rgb(var(--c-black) / .6) 0%, transparent 22%);
 }
-@media (max-width: 900px) {
-  .hero-shade {
-    background:
-      linear-gradient(0deg, rgb(var(--c-black)) 0%, rgb(var(--c-black) / .6) 22%, transparent 48%),
-      linear-gradient(180deg, rgb(var(--c-black) / .6) 0%, transparent 22%);
+@media (min-width: 1100px) {
+  .hero-frame { overflow: visible; }
+  .hero-frame::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    border: 1px solid rgb(var(--c-gold) / .45);
+    transform: translate(18px, 18px);
+    pointer-events: none;
   }
 }
-@keyframes heroZoom {
-  from { transform: scale(1.08); }
-  to   { transform: scale(1); }
-}
-.hero-zoom { animation: heroZoom 9s cubic-bezier(.2,.7,.2,1) both; }
 
 /* Guldramme forskudt bag hero-billedet */
 .frame-offset::before {

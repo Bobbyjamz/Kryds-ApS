@@ -28,9 +28,8 @@ læg bare billedet i `public/billeder/` med det rigtige navn, så dukker det op 
 | Filnavn                   | Hvor på siden            | Format (bredde:højde) | Anbefalet størrelse |
 |---------------------------|--------------------------|-----------------------|---------------------|
 | `hero.jpg`                | Forsiden, øverst         | 4:5 (portræt)         | 1600 × 2000 px      |
-| `kollektion-business.jpg` | Kollektion — Business    | 3:4 (portræt)         | 1200 × 1600 px      |
-| `kollektion-bryllup.jpg`  | Kollektion — Bryllup     | 3:4                   | 1200 × 1600 px      |
-| `kollektion-smoking.jpg`  | Kollektion — Smoking     | 3:4                   | 1200 × 1600 px      |
+| `variant-sort.jpg` … `variant-vest.jpg` | Kollektion — nærbilleder af varianterne (sort, navy, nålestribe, vest) | 3:4 | 1800 × 2400 px |
+| `public/video/hero.mp4` + `hero-poster.jpg` | Video øverst på forsiden (lydløs, kører i loop) | 9:16 | 720 × 1280 px |
 | `lookbook-1.jpg` … `lookbook-12.jpg` | Lookbook-galleriet | 3:4                 | 1200 × 1600 px      |
 | `atelier.jpg`             | "Om Atelier"-sektionen   | 4:5                   | 1600 × 2000 px      |
 

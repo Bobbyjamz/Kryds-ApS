@@ -1,34 +1,45 @@
 "use client";
 
-import Image from "next/image";
-import { useImages } from "@/contexts/ImagesContext";
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { startPrice, formatAmount } from "@/lib/site";
 
 export default function Hero() {
   const { t, lang } = useLanguage();
-  const images = useImages();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const points = [t("hero_point_1"), t("hero_point_2"), t("hero_point_3")];
 
+  // Ved "reducer bevægelse" vises kun stillbilledet
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v && window.matchMedia("(prefers-reduced-motion: reduce)").matches) v.pause();
+  }, []);
+
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden px-[52px] pt-[170px] pb-[110px] max-[900px]:px-5 max-[900px]:items-end max-[900px]:pt-[58svh] max-[900px]:pb-16">
-      {/* Billede i fuld skærm med langsom zoom ud; på mobil kun øverst, så teksten står under ansigtet */}
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-full overflow-hidden max-[900px]:h-[80svh]">
-        {images.hero && (
-          <Image
-            src={images.hero}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="hero-zoom object-cover object-[60%_4%] max-[900px]:object-[50%_0%]"
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden px-[52px] pt-[170px] pb-[110px] max-[1099px]:px-5 max-[1099px]:items-end max-[1099px]:pt-[58svh] max-[1099px]:pb-16">
+      {/* Brand-videoen i loop: på mobil i hele toppen, på computer i en høj ramme til højre */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-[80svh] min-[1100px]:inset-x-auto min-[1100px]:top-1/2 min-[1100px]:-translate-y-[42%] min-[1100px]:right-[max(52px,calc((100vw-1320px)/2))] min-[1100px]:h-[min(74svh,760px)] min-[1100px]:aspect-[9/16]"
+      >
+        <div className="hero-frame relative h-full w-full overflow-hidden">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            src="/video/hero.mp4"
+            poster="/video/hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
-        )}
-        <div className="hero-shade absolute inset-0" />
+          <div className="hero-shade absolute inset-0 min-[1100px]:hidden" />
+        </div>
       </div>
 
       <div className="container-x relative z-[1] w-full">
-        <div className="max-w-[640px]">
+        <div className="max-w-[640px] min-[1100px]:max-w-[560px] min-[1280px]:max-w-[640px]">
           <div className="eyebrow opacity-0 animate-fadeup" style={{ animationDelay: ".15s" }}>
             {t("hero_eyebrow")}
           </div>
