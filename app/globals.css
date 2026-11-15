@@ -26,14 +26,14 @@
   color-scheme: light;
 }
 
-/* Sort tema — logoets egne farver */
+/* Sort tema (standard) — Atelier Scandinavia-logoets farver */
 [data-theme="dark"] {
-  --c-black:  23 24 29;     /* #17181D — logoets baggrund */
-  --c-black2: 28 29 35;
-  --c-gray:   34 35 41;
-  --c-gray2:  44 45 52;
-  --c-gold:   200 164 90;   /* #C8A45A — logoets guld */
-  --c-gold2:  221 191 126;
+  --c-black:  26 27 32;     /* #1A1B20 — logoets baggrund */
+  --c-black2: 31 32 38;
+  --c-gray:   38 39 46;
+  --c-gray2:  48 49 57;
+  --c-gold:   201 165 92;   /* #C9A55C — logoets guld */
+  --c-gold2:  222 192 128;
   --c-cream:  243 238 228;  /* tekst */
   --c-muted:  154 150 140;
   --c-danger: 232 165 152;
@@ -108,13 +108,54 @@ button, a { touch-action: manipulation; }
 }
 
 /* ================================================
-   HERO — tynde guldringe som i logoet
+   LOGO — ATELIER (Bodoni Moda, strakt 45 %) over SCANDINAVIA (Jost)
+   Guld øverst, massiv hvid skygge skråt ned mod højre og blød hvid glød
    ================================================ */
-.hero-ring {
-  position: absolute; border-radius: 50%; pointer-events: none;
-  border: 1px solid rgb(var(--c-gold) / 0.12);
-  transform: translate(-50%, -50%);
+/* Topbjælken findes kun på computer */
+@media (max-width: 900px) { :root { --topbar-h: 0px; } }
+
+.wordmark {
+  display: inline-flex; flex-direction: column; align-items: center;
+  text-decoration: none; color: rgb(var(--c-gold)); line-height: 1;
 }
+.wordmark-main {
+  font-family: var(--font-display), "Bodoni Moda", Didot, serif;
+  font-weight: 700; letter-spacing: .16em; padding-left: .16em;
+  transform: scaleY(1.45); margin-block: .24em;
+  text-shadow:
+    .004em .0024em 0 #fff, .008em .0048em 0 #fff, .012em .0072em 0 #fff, .016em .0096em 0 #fff,
+    .02em .012em 0 #fff, .024em .0144em 0 #fff, .028em .0168em 0 #fff, .032em .0192em 0 #fff,
+    .036em .0216em 0 #fff, .04em .024em 0 #fff, .04em .024em .14em rgb(255 255 255 / .45);
+}
+.wordmark-sub {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 500; letter-spacing: .45em; padding-left: .45em; margin-top: .55em;
+  text-shadow: .022em .033em 0 #fff, .044em .065em 0 #fff, .044em .065em .17em rgb(255 255 255 / .4);
+}
+/* På lyst tema giver den hvide skygge ingen mening — kun guldet */
+[data-theme="light"] .wordmark-main,
+[data-theme="light"] .wordmark-sub { text-shadow: none; }
+
+/* ================================================
+   HERO — billede i fuld skærm med mørk toning
+   ================================================ */
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgb(var(--c-black) / .92) 0%, rgb(var(--c-black) / .65) 45%, rgb(var(--c-black) / .15) 100%),
+    linear-gradient(0deg, rgb(var(--c-black)) 0%, transparent 35%);
+}
+@media (max-width: 900px) {
+  .hero-shade {
+    background:
+      linear-gradient(0deg, rgb(var(--c-black)) 0%, rgb(var(--c-black) / .6) 22%, transparent 48%),
+      linear-gradient(180deg, rgb(var(--c-black) / .6) 0%, transparent 22%);
+  }
+}
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+.hero-zoom { animation: heroZoom 9s cubic-bezier(.2,.7,.2,1) both; }
 
 /* Guldramme forskudt bag hero-billedet */
 .frame-offset::before {

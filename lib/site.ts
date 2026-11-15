@@ -5,9 +5,9 @@ import type { Lang } from "./translations";
  * Tomme felter ("") bliver automatisk skjult på siden.
  */
 export const site = {
-  name: "Atelier",
+  name: "Atelier Scandinavia",
   /** Juridisk navn der står i footer og privatlivspolitik */
-  legalName: "Atelier",
+  legalName: "Atelier Scandinavia",
   cvr: "",
 
   phone: "+45 42 77 98 66",

@@ -82,20 +82,34 @@ export default function Nav() {
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
-  const height = scrolled ? 64 : 84;
+  const height = scrolled ? 72 : 92;
+  // Tynd bjælke i toppen med telefon (kun på computer, og kun før man scroller)
+  const showBar = !scrolled && !menuOpen;
 
   return (
     <>
+      <div
+        className="fixed top-0 left-0 right-0 z-[510] h-[34px] flex items-center justify-between px-[52px] border-b border-gold/15 bg-black/70 font-sans text-[11px] tracking-[.22em] uppercase text-cream/70 max-[900px]:hidden"
+        style={{ transform: showBar ? "translateY(0)" : "translateY(-100%)", transition: "transform 300ms ease" }}
+      >
+        <span>{t("topbar_note")}</span>
+        {site.phone && (
+          <a href={phoneHref(site.phone)} className="no-underline text-cream/80 hover:text-gold transition-colors lining-nums">
+            {t("topbar_call")} {site.phone}
+          </a>
+        )}
+      </div>
       <nav
-        className="fixed top-0 left-0 right-0 z-[500] flex items-center justify-between gap-4 px-[52px] max-[900px]:px-5 max-[400px]:px-4"
+        className="fixed left-0 right-0 z-[500] flex items-center justify-between gap-4 px-[52px] max-[900px]:px-5 max-[400px]:px-4"
         style={{
+          top: showBar ? "var(--topbar-h, 34px)" : 0,
           height,
           background: scrolled || menuOpen ? "rgb(var(--c-black) / .92)" : "transparent",
           backdropFilter: scrolled ? "blur(14px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
           borderBottom: `1px solid ${scrolled ? "var(--hairline)" : "transparent"}`,
           transform: navHidden && !menuOpen ? "translateY(-100%)" : "translateY(0)",
-          transition: "height 300ms, background 300ms, border-color 300ms, transform 250ms ease",
+          transition: "top 300ms, height 300ms, background 300ms, border-color 300ms, transform 250ms ease",
         }}
       >
         <Logo />
@@ -115,7 +129,7 @@ export default function Nav() {
             <ThemeToggle />
             <LangToggle />
           </li>
-          {site.phone && (
+          {site.phone && !showBar && (
             <li className="max-[1280px]:hidden">
               <a
                 href={phoneHref(site.phone)}

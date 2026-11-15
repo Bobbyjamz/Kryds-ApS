@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Bodoni_Moda, Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -12,6 +12,14 @@ const serif = Cormorant_Garamond({
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+// Kun til logoet (ATELIER)
+const display = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -32,7 +40,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   keywords: [
     "jakkesæt København", "tilpasset jakkesæt", "billigt jakkesæt", "jakkesæt tilpasning",
-    "bryllupsjakkesæt", "smoking", "skrædder København", "jakkesæt fra lager", "Atelier jakkesæt",
+    "bryllupsjakkesæt", "smoking", "skrædder København", "jakkesæt fra lager", "Atelier jakkesæt", "Atelier Scandinavia",
   ],
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }], apple: "/apple-icon.png" },
   openGraph: {
@@ -49,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FAF8F4",
+  themeColor: "#1A1B20",
   colorScheme: "dark light",
 };
 
@@ -72,7 +80,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="da" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
+    <html lang="da" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${display.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

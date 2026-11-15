@@ -10,6 +10,8 @@ const da = {
   nav_about: "Om os",
   nav_faq: "Spørgsmål & svar",
   nav_book: "Book tid",
+  topbar_note: "Gratis prøvning · Klar på en uge",
+  topbar_call: "Ring",
   nav_menu_open: "Åbn menu",
   nav_menu_close: "Luk menu",
   lang_switch: "Switch to English",
@@ -17,9 +19,9 @@ const da = {
   theme_to_dark: "Skift til mørkt tema",
 
   // Hero
-  hero_eyebrow: "Jakkesæt · Tilpasning · København",
-  hero_h1_1: "Sæt et X i kalenderen",
-  hero_h1_2: "for dit nye jakkesæt",
+  hero_eyebrow: "Jakkesæt i ægte uld · København",
+  hero_h1_1: "Et jakkesæt,",
+  hero_h1_2: "der passer til dig",
   hero_desc:
     "Vælg dit jakkesæt i ægte uld fra vores store lager, og få det tilpasset af vores skrædder. Resultatet sidder næsten som skræddersyet, men uden skrædderprisen.",
   hero_price_label: "Jakkesæt fra",
@@ -206,15 +208,17 @@ const en: Record<TranslationKey, string> = {
   nav_about: "About",
   nav_faq: "Questions & answers",
   nav_book: "Book now",
+  topbar_note: "Free fitting · Ready in one week",
+  topbar_call: "Call",
   nav_menu_open: "Open menu",
   nav_menu_close: "Close menu",
   lang_switch: "Skift til dansk",
   theme_to_light: "Switch to light theme",
   theme_to_dark: "Switch to dark theme",
 
-  hero_eyebrow: "Suits · Alterations · Copenhagen",
-  hero_h1_1: "Put an X in the calendar",
-  hero_h1_2: "for your new suit",
+  hero_eyebrow: "Real wool suits · Copenhagen",
+  hero_h1_1: "A suit",
+  hero_h1_2: "that fits you",
   hero_desc:
     "Choose a real wool suit from our large stock and have it fitted by our tailor. It fits almost like bespoke, without the bespoke price.",
   hero_price_label: "Suits from",
