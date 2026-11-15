@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteUrl();
   return [
     { url: base, changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/galleri`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privatlivspolitik`, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

@@ -163,6 +163,29 @@ button, a { touch-action: manipulation; }
 }
 
 /* ================================================
+   GALLERI — karrusel der ruller af sig selv
+   ================================================ */
+.gallery {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.gallery-track {
+  display: flex; gap: 16px; padding-right: 16px; /* så halvdelen af sporet er præcis én runde */
+  width: max-content; margin: 0; list-style: none;
+  animation: galleryScroll linear infinite;
+}
+.gallery:hover .gallery-track,
+.gallery[data-paused="true"] .gallery-track { animation-play-state: paused; }
+.gallery-item { flex: none; height: clamp(300px, 56vh, 560px); }
+.gallery-item img { height: 100%; width: auto; display: block; }
+@keyframes galleryScroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .gallery { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .gallery-track { animation: none; }
+}
+
+/* ================================================
    BILLEDPLADSHOLDER
    ================================================ */
 .placeholder-surface {

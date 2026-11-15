@@ -10,6 +10,7 @@ const LINKS: { href: string; key: TranslationKey }[] = [
   { href: "/#kollektion", key: "nav_collection" },
   { href: "/#proces", key: "nav_process" },
   { href: "/#lookbook", key: "nav_lookbook" },
+  { href: "/galleri", key: "nav_gallery" },
   { href: "/#priser", key: "nav_prices" },
   { href: "/#om", key: "nav_about" },
   { href: "/#faq", key: "nav_faq" },
