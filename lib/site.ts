@@ -12,7 +12,7 @@ export const site = {
 
   phone: "+45 42 77 98 66",
   // TODO: Midlertidigt KrydsByg's e-mail — skift til Atelier's egen
-  email: "kontakt@krydsbyg.com",
+  email: "atelierscandinavia@gmail.com", // vises på siden; bookinger sendes til RESEND_TO (se api/booking)
 
   /** Fx "Store Kongensgade 1, 1264 København K" */
   address: "",

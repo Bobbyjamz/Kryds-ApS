@@ -59,8 +59,8 @@ Formularen sender en mail via [Resend](https://resend.com). Sæt disse miljøvar
 
 ```
 RESEND_API_KEY=re_...
-RESEND_FROM=Atelier <kontakt@ditdomæne.dk>
-RESEND_TO=kontakt@ditdomæne.dk
+RESEND_FROM=Atelier Scandinavia <noreply@krydsbyg.com>   # godkendt afsender i Resend
+RESEND_TO=intern@adresse.dk                               # hvor bookinger lander; vises aldrig på siden
 NEXT_PUBLIC_SITE_URL=https://ditdomæne.dk
 ```
 

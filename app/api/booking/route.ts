@@ -54,9 +54,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
+  // Bookinger sendes til en intern adresse, der kun står her på serveren (aldrig på siden)
+  if (!process.env.RESEND_FROM || !process.env.RESEND_TO) {
+    console.error("[booking] RESEND_FROM eller RESEND_TO mangler");
+    return NextResponse.json({ error: "Booking er ikke sat op endnu" }, { status: 503 });
+  }
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const from = process.env.RESEND_FROM || `${site.name} <${site.email}>`;
-  const to = process.env.RESEND_TO || site.email;
+  const from = process.env.RESEND_FROM;
+  const to = process.env.RESEND_TO;
 
   const rows: [string, string][] = [
     ["Navn", name],
@@ -108,7 +113,7 @@ export async function POST(req: NextRequest) {
       from,
       to: [to],
       replyTo: email,
-      subject: `Ny booking: ${occasion || "Opmåling"} — ${name}`,
+      subject: `${site.name} – ny booking: ${occasion || "Prøvning"} — ${name}`,
       html,
     });
     if (error) {
