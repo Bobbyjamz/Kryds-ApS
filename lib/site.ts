@@ -19,7 +19,7 @@ export const site = {
   /** Fx [{ days: "Man–Fre", hours: "10–18" }, { days: "Lør", hours: "10–15" }] */
   openingHours: [] as { days: string; hours: string }[],
 
-  instagram: "",
+  instagram: "https://www.instagram.com/atelier.scandinavia/",
   facebook: "",
 
   /**
